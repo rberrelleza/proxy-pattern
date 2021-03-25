@@ -1,0 +1,9 @@
+name: proxy
+image: alpine
+autocreate: true
+forward:
+- 27017:db:27017
+- 6379:cache:6379
+- 6082:varnish:6082
+reverse:
+- 8080:8080

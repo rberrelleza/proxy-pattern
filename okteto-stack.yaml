@@ -1,0 +1,19 @@
+name: proxy
+services:
+  varnish:
+    image: okteto.dev/varnish
+    build: varnish
+    ports:
+    - 80
+    public: true
+  db:
+    image: bitnami/mongodb:latest
+    ports:
+    - 27017
+    volumes:
+    - /bitnami/mongodb
+  cache:
+    image: redis
+    ports:
+    - 6379
+  
